@@ -1,53 +1,69 @@
+/* === ОБЩИЕ НАСТРОЙКИ === */
 body {
   font-family: sans-serif;
-  text-align: center;
-  background-color: #f0f0f0;
-  padding: 20px;
   margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* вертикальная центровка */
+  align-items: center;     /* горизонтальная центровка */
+  background-color: #121212; /* тёмный фон */
+  color: #ffffff;            /* светлый текст */
 }
 
+/* === ИГРОВОЕ ПОЛЕ === */
 #game {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
-  max-width: 300px;
-  margin: 20px auto;
+  width: 90vw;
+  max-width: 500px;
 }
 
+/* === КЛЕТКИ === */
 .cell {
   aspect-ratio: 1 / 1;
-  background-color: #ffffff;
-  font-size: 10vw;
+  background-color: #1e1e1e; /* тёмная ячейка */
+  font-size: 20vw;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 2px solid #ccc;
+  border: 2px solid #444;
   user-select: none;
+  transition: background 0.2s;
 }
 
 .cell:hover {
-  background-color: #e0e0e0;
+  background-color: #333;
 }
 
+/* === СТАТУС И КНОПКА === */
 #status {
-  font-size: 5vw;
-  margin-top: 10px;
+  font-size: 6vw;
+  margin-top: 20px;
+  text-align: center;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 4vw;
+  margin-top: 15px;
+  padding: 12px 24px;
+  font-size: 5vw;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  margin-top: 10px;
+  transition: background 0.2s;
 }
 
-/* Медиа-запрос для больших экранов */
-@media (min-width: 600px) {
-  #game {
-    max-width: 400px;
-  }
+button:hover {
+  background-color: #3d3d3d;
+}
 
+/* === МЕДИА-ДЛЯ ПЛАНШЕТОВ/ПК === */
+@media (min-width: 600px) {
   .cell {
     font-size: 64px;
   }
