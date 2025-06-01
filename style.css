@@ -2,21 +2,22 @@ body {
   font-family: sans-serif;
   text-align: center;
   background-color: #f0f0f0;
+  padding: 20px;
+  margin: 0;
 }
 
 #game {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-gap: 5px;
-  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  max-width: 300px;
   margin: 20px auto;
 }
 
 .cell {
-  width: 100px;
-  height: 100px;
+  aspect-ratio: 1 / 1;
   background-color: #ffffff;
-  font-size: 64px;
+  font-size: 10vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,12 +31,32 @@ body {
 }
 
 #status {
-  font-size: 24px;
+  font-size: 5vw;
   margin-top: 10px;
 }
 
 button {
   padding: 10px 20px;
-  font-size: 18px;
+  font-size: 4vw;
   cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Медиа-запрос для больших экранов */
+@media (min-width: 600px) {
+  #game {
+    max-width: 400px;
+  }
+
+  .cell {
+    font-size: 64px;
+  }
+
+  #status {
+    font-size: 24px;
+  }
+
+  button {
+    font-size: 18px;
+  }
 }
